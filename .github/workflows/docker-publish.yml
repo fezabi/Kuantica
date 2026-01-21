@@ -37,5 +37,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/kuantica-api:latest
-            ghcr.io/${{ github.repository_owner }}/kuantica-api:${{ github.sha }}
+            ghcr.io/fezabi/kuantica-api:latest
+            ghcr.io/fezabi/kuantica-api:${{ github.sha }}
+
