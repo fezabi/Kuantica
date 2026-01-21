@@ -39,4 +39,8 @@ jobs:
           tags: |
             ghcr.io/fezabi/kuantica-api:latest
             ghcr.io/fezabi/kuantica-api:${{ github.sha }}
+      
+      - name: Trigger Dokploy Deploy
+        run: |
+          curl -fsS -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}"
 
