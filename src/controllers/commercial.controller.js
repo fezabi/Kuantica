@@ -1,7 +1,7 @@
 const commercialService = require('../services/commercial.service');
 const apiResponse = require('../utils/apiResponse');
 const asyncHandler = require('../utils/asyncHandler');
-const { commercialFunnelSchema, commercialReservasSchema } = require('../validators/common.schema');
+const { commercialFunnelSchema, commercialReservasSchema, commercialReservasPorMesSchema } = require('../validators/common.schema');
 
 const getFunnelDiario = asyncHandler(async (req, res) => {
     const validated = commercialFunnelSchema.parse(req);
@@ -19,7 +19,16 @@ const getReservasAtribuidas = asyncHandler(async (req, res) => {
     return apiResponse(res, 200, 'Reservas atribuidas fetched successfully', result.data, result.meta);
 });
 
+const getReservasPorMes = asyncHandler(async (req, res) => {
+    const validated = commercialReservasPorMesSchema.parse(req);
+    const { limit, cursor, ...filters } = validated.query;
+
+    const result = await commercialService.getReservasPorMes({ limit, cursor, filters });
+    return apiResponse(res, 200, 'Reservas por mes fetched successfully', result.data, result.meta);
+});
+
 module.exports = {
     getFunnelDiario,
     getReservasAtribuidas,
+    getReservasPorMes,
 };

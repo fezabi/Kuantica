@@ -1,19 +1,17 @@
 {
   "api": {
-    "image": ":reportin-layer.kuantica-api-20260109-1904.16",
+    "image": ":reportin-layer.kuantica-api-20260121-0854.20",
     "ports": {
       "3000": "HTTP"
     },
     "environment": {
       "PORT": "3000",
       "NODE_ENV": "production",
-
       "DB_HOST": "ls-d112cfa96088c6ff292b6c2719e4b385a37a26c7.cejmqc8igeub.us-east-1.rds.amazonaws.com",
       "DB_PORT": "5432",
       "DB_USER": "postgres",
       "DB_PASSWORD": "postgres123",
       "DB_NAME": "analytics",
-
       "API_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.IjoxLCJpZF9yb2wiOjEsImlhdCI6MTc2Nzc1NjU0MCwiZXhwIjoxNzY3Nzg1MzQwfQ"
     }
   }

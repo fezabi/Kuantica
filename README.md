@@ -53,6 +53,7 @@ Authorization: Bearer <YOUR_API_TOKEN>
 ### Commercial Module
 - `GET /commercial/fct_funnel_diario` - Daily Funnel Report.
 - `GET /commercial/fct_reservas_atribuidas` - Attributed Reservations.
+- `GET /commercial/fct_reservas_por_mes` - Reservations by Month (Aggregated).
 
 ### Executive Module
 - `GET /executive/health` - Module Health Check.

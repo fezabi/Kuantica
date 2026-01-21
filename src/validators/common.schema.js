@@ -66,10 +66,24 @@ const marketingInversionSchema = z.object({
     }),
 });
 
+const commercialReservasPorMesSchema = z.object({
+    query: z.object({
+        limit: z.coerce.number().int().min(1).max(200).default(20),
+        cursor: z.string().optional(),
+        // Filters
+        fecha_reserva_inicio: z.string().date().optional(),
+        fecha_reserva_fin: z.string().date().optional(),
+        proyecto_id: z.coerce.number().int().optional(),
+        rut_cliente: z.string().optional(),
+        estado_reserva: z.string().optional(),
+    }),
+});
+
 module.exports = {
     paginationSchema,
     commercialFunnelSchema,
     commercialReservasSchema,
+    commercialReservasPorMesSchema,
     executiveReportSchema,
     marketingContactosSchema,
     marketingInversionSchema,

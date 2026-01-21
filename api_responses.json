@@ -1,0 +1,238 @@
+{
+    "commercial": {
+        "getFunnelDiario": {
+            "endpoint": "GET /commercial/fct_funnel_diario",
+            "description": "Daily Funnel Report",
+            "response": {
+                "status": 200,
+                "message": "Funnel diario fetched successfully",
+                "data": [
+                    {
+                        "id_funnel": 101,
+                        "fecha_dato": "2023-10-25",
+                        "proyecto_id": 1,
+                        "cantidad_visitas_unicas": 50,
+                        "cantidad_cotizaciones_unicas": 10,
+                        "cantidad_reservas": 5,
+                        "cantidad_promesas": 2,
+                        "load_date": "2023-10-26"
+                    },
+                    {
+                        "id_funnel": 102,
+                        "fecha_dato": "2023-10-26",
+                        "proyecto_id": 1,
+                        "cantidad_visitas_unicas": 45,
+                        "cantidad_cotizaciones_unicas": 8,
+                        "cantidad_reservas": 4,
+                        "cantidad_promesas": 1,
+                        "load_date": "2023-10-27"
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": "MTAy",
+                    "has_more": true
+                }
+            }
+        },
+        "getReservasAtribuidas": {
+            "endpoint": "GET /commercial/fct_reservas_atribuidas",
+            "description": "Attributed Reservations",
+            "response": {
+                "status": 200,
+                "message": "Reservas atribuidas fetched successfully",
+                "data": [
+                    {
+                        "reserva_id": 5001,
+                        "fecha_reserva": "2023-10-25",
+                        "proyecto_id": 1,
+                        "unidad_codigo": "U-101",
+                        "rut_cliente": "12345678-9",
+                        "canal_atribuido": "Sala de Ventas",
+                        "fecha_primer_contacto": "2023-10-20",
+                        "dias_conversion": 5,
+                        "estado_reserva": "Activa",
+                        "valor_venta": 250000.00,
+                        "load_date": "2023-10-26"
+                    },
+                    {
+                        "reserva_id": 5002,
+                        "fecha_reserva": "2023-10-26",
+                        "proyecto_id": 2,
+                        "unidad_codigo": "U-202",
+                        "rut_cliente": "98765432-1",
+                        "canal_atribuido": "Web",
+                        "fecha_primer_contacto": "2023-10-25",
+                        "dias_conversion": 1,
+                        "estado_reserva": "Inactiva",
+                        "valor_venta": 150000.50,
+                        "load_date": "2023-10-27"
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": "NTAwMg==",
+                    "has_more": true
+                }
+            }
+        },
+        "getReservasPorMes": {
+            "endpoint": "GET /commercial/fct_reservas_por_mes",
+            "description": "Reservations by Month",
+            "response": {
+                "status": 200,
+                "message": "Reservas por mes fetched successfully",
+                "data": [
+                    {
+                        "proyecto_id": 1,
+                        "canal_atribuido": "Sala de Ventas",
+                        "mes_reserva": "2023-10",
+                        "estado_reserva": "Activa",
+                        "cant_estado": 10,
+                        "ratio_estado": 0.55
+                    },
+                    {
+                        "proyecto_id": 1,
+                        "canal_atribuido": "Sala de Ventas",
+                        "mes_reserva": "2023-10",
+                        "estado_reserva": "Inactiva",
+                        "cant_estado": 8,
+                        "ratio_estado": 0.44
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": null,
+                    "has_more": false
+                }
+            }
+        }
+    },
+    "executive": {
+        "getHealth": {
+            "endpoint": "GET /executive/health",
+            "description": "Health Check",
+            "response": {
+                "status": 200,
+                "message": "Executive module is healthy"
+            }
+        },
+        "getRptGestionDiaria": {
+            "endpoint": "GET /executive/rpt_gestion_diaria",
+            "description": "Daily Management Report",
+            "response": {
+                "status": 200,
+                "message": "Reporte gestion diaria fetched successfully",
+                "data": [
+                    {
+                        "id_reporte": 301,
+                        "fecha_analisis": "2023-10-25",
+                        "proyecto_nombre": "Proyecto Alpha",
+                        "canal_agrupado": "Digital",
+                        "inversion_total": 500000.00,
+                        "leads_unicos": 150,
+                        "reservas_generadas": 5,
+                        "cpl_diario": 3333.33,
+                        "cpr_diario": 100000.00,
+                        "tasa_conversion_lead_reserva": 0.0333,
+                        "load_date": "2023-10-26"
+                    },
+                    {
+                        "id_reporte": 302,
+                        "fecha_analisis": "2023-10-26",
+                        "proyecto_nombre": "Proyecto Beta",
+                        "canal_agrupado": "Referidos",
+                        "inversion_total": 0.00,
+                        "leads_unicos": 20,
+                        "reservas_generadas": 2,
+                        "cpl_diario": 0.00,
+                        "cpr_diario": 0.00,
+                        "tasa_conversion_lead_reserva": 0.1000,
+                        "load_date": "2023-10-27"
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": "MzAy",
+                    "has_more": true
+                }
+            }
+        }
+    },
+    "marketing": {
+        "getHealth": {
+            "endpoint": "GET /marketing/health",
+            "description": "Health Check",
+            "response": {
+                "status": 200,
+                "message": "Marketing module is healthy"
+            }
+        },
+        "getFctContactosDiarios": {
+            "endpoint": "GET /marketing/fct_contactos_diarios",
+            "description": "Daily Contact Metrics",
+            "response": {
+                "status": 200,
+                "message": "Contactos diarios fetched successfully",
+                "data": [
+                    {
+                        "contacto_key": "contact_001",
+                        "fecha_contacto": "2023-10-25",
+                        "proyecto_id": 1,
+                        "rut_cliente": "11223344-5",
+                        "canal_agrupado": "Redes Sociales",
+                        "origen_detalle": "Facebook Ads",
+                        "es_nuevo_contacto": true,
+                        "load_date": "2023-10-26"
+                    },
+                    {
+                        "contacto_key": "contact_002",
+                        "fecha_contacto": "2023-10-25",
+                        "proyecto_id": 1,
+                        "rut_cliente": "55667788-9",
+                        "canal_agrupado": "Email Marketing",
+                        "origen_detalle": "Newsletter Octubre",
+                        "es_nuevo_contacto": false,
+                        "load_date": "2023-10-26"
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": "Y29udGFjdF8wMDI=",
+                    "has_more": true
+                }
+            }
+        },
+        "getFctInversionDiaria": {
+            "endpoint": "GET /marketing/fct_inversion_diaria",
+            "description": "Daily Investment Metrics",
+            "response": {
+                "status": 200,
+                "message": "Inversion diaria fetched successfully",
+                "data": [
+                    {
+                        "id_inversion": 701,
+                        "fecha_inversion": "2023-10-25",
+                        "proyecto_id": 1,
+                        "canal_agrupado": "Google Ads",
+                        "monto_inversion": 500.00,
+                        "load_date": "2023-10-26"
+                    },
+                    {
+                        "id_inversion": 702,
+                        "fecha_inversion": "2023-10-25",
+                        "proyecto_id": 2,
+                        "canal_agrupado": "Facebook Ads",
+                        "monto_inversion": 300.00,
+                        "load_date": "2023-10-26"
+                    }
+                ],
+                "meta": {
+                    "limit": 20,
+                    "next_cursor": "NzAy",
+                    "has_more": true
+                }
+            }
+        }
+    }
+}

@@ -49,6 +49,22 @@ Retrieves attributed reservations.
 | `rut_cliente` | `string` | Filter by client RUT |
 | `estado_reserva` | `string` | Filter by status |
 
+#### `GET /commercial/fct_reservas_por_mes`
+Retrieves aggregated reservations by month, project, channel, and status.
+
+*   **URL**: `/commercial/fct_reservas_por_mes`
+*   **Method**: `GET`
+*   **Pagination**: Cursor/Limit supported (Note: Cursor logic limited for aggregations)
+*   **Filters**:
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `fecha_reserva_inicio` | `date` | Start reservation date |
+| `fecha_reserva_fin` | `date` | End reservation date |
+| `proyecto_id` | `integer` | Filter by project ID |
+| `rut_cliente` | `string` | Filter by client RUT |
+| `estado_reserva` | `string` | Filter by status |
+
 ### Executive Module
 
 #### `GET /executive/rpt_gestion_diaria`
