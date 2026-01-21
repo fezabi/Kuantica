@@ -12,7 +12,11 @@ const swaggerSpecs = require('./config/swagger');
 const app = express();
 
 // Security and Utilities
-app.use(helmet());
+// app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false, // Swagger UI necesita scripts inline
+}));
+
 app.use(cors());
 app.use(express.json());
 app.use(requestLogger);
